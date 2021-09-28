@@ -66,8 +66,8 @@ resource "aws_lb_listener" "hello_world" {
 
 # ecs taskのセキュリティーグループ
 resource "aws_security_group" "hello_world_task" {
-  name        = "example-task-security-group"
-  vpc_id      = aws_vpc.default.id
+  name   = "example-task-security-group"
+  vpc_id = aws_vpc.default.id
 
   ingress {
     protocol        = "tcp"
