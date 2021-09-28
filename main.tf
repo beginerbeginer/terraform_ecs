@@ -6,7 +6,7 @@ resource "aws_vpc" "default" {
   cidr_block = "10.32.0.0/16"
 
   tags = {
-    Name    = "vpc-for-ecs"
+    Name = "vpc-for-ecs"
   }
 }
 
@@ -21,7 +21,7 @@ resource "aws_subnet" "public" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name    = "public-subnet-for-ecs"
+    Name = "public-subnet-for-ecs"
   }
 
 }
@@ -32,6 +32,6 @@ resource "aws_subnet" "private" {
   availability_zone = data.aws_availability_zones.available_zones.names[count.index]
   vpc_id            = aws_vpc.default.id
   tags = {
-    Name    = "private-subnet-for-ecs"
+    Name = "private-subnet-for-ecs"
   }
 }
